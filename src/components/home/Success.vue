@@ -1,0 +1,68 @@
+<template>
+    <div class="results__success">
+        <div class="results__head">
+            <h2 class="section-title">Результаты поиска</h2>
+            <a class="section-link" href="#">Посмотреть аналитику <img class="arrow" src="../../assets/arrow.svg" alt="Посмотреть аналитику"></a>
+        </div>
+        
+        <CardsList />
+
+        <button class="results__button">Показать еще</button>
+    </div>
+</template>
+
+<script>
+import CardsList from '@/components/home/CardsList';
+
+export default {
+    components: {
+        CardsList
+    }
+}
+</script>
+
+<style>
+.results__success {
+    display: flex;
+    flex-direction: column;
+}
+
+.results__head {
+    display: flex;
+    justify-content: space-between;
+    margin: 76px 104px 0;
+}
+
+.section-title {
+    margin: 0;
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 46px;
+    color: #1a1b22;
+}
+
+.section-link {
+    text-decoration: none;
+    font-weight: 500;
+    align-self: center;
+}
+
+.results__button {
+    background: #fff;
+    border-radius: 80px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    align-self: center;
+    color: #1a1b22;
+    padding: 18.14px 84px 21.86px;
+    width: 288px;
+    border-style: none;
+    margin-bottom: 80px;
+}
+</style>
