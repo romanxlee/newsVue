@@ -13,7 +13,7 @@ export default {
 
 <style>
 .results__preloader {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     padding: 80px 0;

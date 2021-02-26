@@ -14,7 +14,7 @@ export default {
 
 <style>
 .results__nothing {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
 }

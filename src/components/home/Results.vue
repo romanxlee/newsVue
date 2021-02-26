@@ -23,7 +23,7 @@ export default {
 <style>
 .results {
     background-color: #f5f6f7;
-    display: none;
+    display: flex;
 }
 
 .results__title {

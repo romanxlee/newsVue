@@ -1,6 +1,11 @@
 <template>
-    <div class="cards">
-        <Card />
+    <div class="cards"
+    >
+        <Card 
+        v-for="item of cards"
+        :item="item"
+        :key="item.ix"
+        />
     </div>
 </template>
 
@@ -8,6 +13,23 @@
 import Card from '@/components/home/Card';
 
 export default {
+    /* props: ['cards'], */
+    data() {
+        return {
+            cards: ''
+        }
+    },
+    mounted() {
+        if (localStorage.articles) {
+            this.cards = JSON.parse(localStorage.getItem('articles'))
+            console.log(this.cards)
+        }
+    },
+    watch: {
+        cards(newCards) {
+            localStorage.articles = newCards
+        }
+    },
     components: {
         Card
     }

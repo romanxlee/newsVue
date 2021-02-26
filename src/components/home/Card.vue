@@ -1,16 +1,23 @@
 <template>
-  <a class="cards__item" href="#" target="_blank">
-      <div class="cards__image"></div>
-      <p class="cards__date"></p>
-      <h3 class="cards__title"></h3>
-      <p class="cards__text"></p>
-      <p class="cards__source"></p>
+  <a class="cards__item" 
+  v-bind:href= item.url
+  target="_blank">
+      <div class="cards__image"
+      v-bind:style="{backgroundImage: 'url(' + item.urlToImage + ')'}"></div>
+      <p class="cards__date">{{ item.date }}</p>
+      <h3 class="cards__title">{{ item.title }}</h3>
+      <p class="cards__text">{{ item.description }}</p>
+      <p class="cards__source">{{ item.source.name }}</p>
   </a>
 </template>
 
 <script>
 export default {
-
+    props: {
+        item: {
+            type: Object
+        }
+    }
 }
 </script>
 
@@ -24,6 +31,14 @@ export default {
     margin-bottom: 16px;
     overflow: hidden;
     text-decoration: none;
+}
+
+.cards__image {
+    max-width: 400px;
+    height: 272px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50%;
 }
 
 .cards__date {

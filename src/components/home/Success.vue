@@ -5,7 +5,8 @@
             <a class="section-link" href="#">Посмотреть аналитику <img class="arrow" src="../../assets/arrow.svg" alt="Посмотреть аналитику"></a>
         </div>
         
-        <CardsList />
+        <CardsList 
+        :key="componentKey"/>
 
         <button class="results__button">Показать еще</button>
     </div>
@@ -15,6 +16,19 @@
 import CardsList from '@/components/home/CardsList';
 
 export default {
+    data() {
+        return {
+            componentKey: 0
+        }
+    },
+    mounted() {
+        this.$root.$on('change-key', this.changeKey)
+    },
+    methods: {
+        changeKey() {
+            this.componentKey += 1
+        }
+    },
     components: {
         CardsList
     }
