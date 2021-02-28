@@ -13,23 +13,32 @@
 import Card from '@/components/home/Card';
 
 export default {
-    /* props: ['cards'], */
-    data() {
-        return {
-            cards: ''
+     props: ['cards'],
+     watch: {
+                 cards(newCards) {
+            localStorage.articles = newCards
         }
-    },
-    mounted() {
-        if (localStorage.articles) {
-            this.cards = JSON.parse(localStorage.getItem('articles'))
+     },
+/*     data() {
+        const cards = JSON.parse(localStorage.articles)
+        return {
+            cards
+        }
+    }, */
+    
+/*     mounted() {
+        const articles = localStorage.articles
+        if (articles) {
+            this.cards = articles
             console.log(this.cards)
         }
     },
     watch: {
+        
         cards(newCards) {
             localStorage.articles = newCards
         }
-    },
+    }, */
     components: {
         Card
     }

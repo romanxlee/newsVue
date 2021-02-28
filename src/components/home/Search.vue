@@ -2,7 +2,6 @@
         <section class="search">
         <form 
         @submit.prevent="onSubmit"
-        @submit="changeKey"
         class="search__form">
             <h1 class="search__title">Что в мире творится?</h1>
             <p class="search__text">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
@@ -22,6 +21,13 @@ export default {
     data() {
         return {
             request: ''
+        }
+    },
+        mounted() {
+        const articles = JSON.parse(localStorage.articles)
+        if (articles) {
+            this.cards = articles
+            console.log(this.cards)
         }
     },
     methods: {
@@ -44,8 +50,9 @@ export default {
             method: 'GET'
         })
         .then((res) => res.json())
-        .then((res) => localStorage.setItem('articles', JSON.stringify(res.articles)))
+        .then((res) => localStorage.articles = JSON.stringify(res.articles))
         .catch(err => console.log(err))
+        .finally(this.changeKey())
         },
         changeKey() {
             this.$root.$emit('change-key')

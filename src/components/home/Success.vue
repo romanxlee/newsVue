@@ -6,7 +6,9 @@
         </div>
         
         <CardsList 
-        :key="componentKey"/>
+        :key="componentKey"
+        v-bind:cards="cards"
+        />
 
         <button class="results__button">Показать еще</button>
     </div>
@@ -18,7 +20,8 @@ import CardsList from '@/components/home/CardsList';
 export default {
     data() {
         return {
-            componentKey: 0
+            componentKey: 0,
+            cards: JSON.parse(localStorage.articles)
         }
     },
     mounted() {
