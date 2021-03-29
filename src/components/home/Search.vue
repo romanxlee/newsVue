@@ -1,19 +1,59 @@
 <template>
         <section class="search">
-        <form class="search__form">
-          <h1 class="search__title">Что в мире творится?</h1>
-          <p class="search__text">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
-          <div class="search__field">
-            <input class="search__input" type="text" placeholder="Введите тему новости" minlength="2" maxlength="30" required>
-            <button class="search__button">Искать</button>
-          </div>
+        <form 
+        @submit.prevent="onSubmit"
+        class="search__form">
+            <h1 class="search__title">Что в мире творится?</h1>
+            <p class="search__text">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
+            <div class="search__field">
+                <input 
+                v-model="request"
+                class="search__input" type="text" placeholder="Введите тему новости" minlength="2" maxlength="30" required>
+                <button class="search__button">Искать</button>
+            </div>
         </form>
       </section>
 </template>
 
 <script>
-export default {
 
+export default {
+    data() {
+        return {
+            request: ''
+        }
+    },
+/*         mounted() {
+        const articles = JSON.parse(localStorage.articles)
+        if (articles) {
+            this.cards = articles
+            console.log(this.cards)
+        }
+    }, */
+    methods: {
+         /* setRequest() {
+             localStorage.setItem('request', JSON.stringify(this.request))
+             console.log(JSON.parse(localStorage.getItem('request')))
+         }, */
+
+        onSubmit() {
+            const key = '&apiKey=dd4fcad612854992bf99fc67d8617096'
+            const TODAY = new Date()
+            const DAYS_IN_WEEK = 7;
+            const MS_IN_DAY = 86400000;
+            const DAYS_AGO = DAYS_IN_WEEK * MS_IN_DAY;
+            const DAYS_FROM_TODAY = TODAY - DAYS_AGO;
+            return fetch('https://nomoreparties.co/news/v2/everything?' + `q=${this.request}` + `&from=${TODAY}` + `&to=${DAYS_FROM_TODAY}` +`&sortBy=publishedAt` + `&language=ru` + `&pageSize=6` + key, {
+            method: 'GET'
+        })
+        .then((res) => res.json())
+        .then((res) => this.$store.commit('cardsToRender', res.articles))
+        //.finally(this.$store.commit('showPreloader', false))
+        //.then((res) => localStorage.articles = JSON.stringify(res.articles))
+        
+        .catch(err => console.log(err))
+        }
+    }
 }
 </script>
 

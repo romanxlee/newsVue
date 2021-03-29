@@ -1,8 +1,10 @@
 <template>
-    <section class="results">
+    <section 
+    class="results">
         <Preloader />
         <Nothing />
-        <Success />
+        <Success 
+        />
     </section>
 </template>
 
@@ -16,6 +18,8 @@ export default {
         Preloader,
         Nothing,
         Success
+    },
+    methods: {
     }
 }
 </script>
@@ -23,7 +27,6 @@ export default {
 <style>
 .results {
     background-color: #f5f6f7;
-    display: none;
 }
 
 .results__title {
