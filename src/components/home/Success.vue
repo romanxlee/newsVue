@@ -1,13 +1,14 @@
 <template>
-    <div class="results__success">
+    <div 
+    v-if="renderCards.length"
+    class="results__success">
         <div class="results__head">
             <h2 class="section-title">Результаты поиска</h2>
             <a class="section-link" href="#">Посмотреть аналитику <img class="arrow" src="../../assets/arrow.svg" alt="Посмотреть аналитику"></a>
         </div>
         
         <CardsList 
-        :key="componentKey"
-        v-bind:cards="cards"
+        v-bind:renderCards="renderCards"
         />
 
         <button class="results__button">Показать еще</button>
@@ -18,19 +19,17 @@
 import CardsList from '@/components/home/CardsList';
 
 export default {
+    computed: {
+        renderCards() {
+            return this.$store.state.cardsToRender
+        }
+    },
     data() {
         return {
-            componentKey: 0,
-            cards: JSON.parse(localStorage.articles)
+            
         }
-    },
-    mounted() {
-        this.$root.$on('change-key', this.changeKey)
     },
     methods: {
-        changeKey() {
-            this.componentKey += 1
-        }
     },
     components: {
         CardsList

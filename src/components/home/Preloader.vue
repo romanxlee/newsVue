@@ -1,5 +1,7 @@
 <template>
-    <div class="results__preloader">
+    <div 
+    v-if="this.$store.state.showPreloader"
+    class="results__preloader">
         <i class="circle-preloader"></i>
         <p class="results__text">Идет поиск новостей...</p>
     </div>
@@ -7,13 +9,12 @@
 
 <script>
 export default {
-
 }
 </script>
 
 <style>
 .results__preloader {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     padding: 80px 0;
