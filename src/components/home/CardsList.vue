@@ -13,26 +13,11 @@
 import Card from '@/components/home/Card';
 
 export default {
-     props: ['renderCards'],
-/*     data() {
-        const cards = JSON.parse(localStorage.articles)
-        return {
-            cards
-        }
-    }, */
-    
-/*     mounted() {
-        //const articles = localStorage.articles
-        if (localStorage.articles) {
-            this.newCards = localStorage.articles
+    props: {
+        renderCards: {
+            type: Array
         }
     },
-    watch: {
-        
-        newCards(newCards) {
-            localStorage.articles = newCards
-        }
-    }, */
     components: {
         Card
     }
@@ -44,6 +29,21 @@ export default {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 16px;
-    margin: 64px 104px;
+    margin: 64px 104px 64px;
+}
+
+@media (max-width: 1439px) and (min-width: 768px) {
+    .cards {
+        margin: 40px;
+    }
+}
+
+@media (max-width: 767px) and (min-width: 320px) {
+    .cards {
+        margin: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 </style>

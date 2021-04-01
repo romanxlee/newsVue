@@ -2,9 +2,8 @@
     <footer class="footer">
       <p class="footer__copyright">© 2020 romanxlee</p>
       <nav class="footer__menu">
-        <a class="footer__link" href="index.html">Главная</a>
-        <a class="footer__link" href="about.html">О проекте</a>
-        <a class="footer__link" href="https://praktikum.yandex.ru/" target="blank">Яндекс.Практикум</a>
+        <router-link class="footer__link" to="/">Главная</router-link>
+        <router-link class="footer__link" to="/about">О проекте</router-link>
     </nav>
     <div class="footer__social">
         <a class="footer__social-link" href="https://github.com/romanxlee" target="blank">
@@ -33,6 +32,12 @@ export default {
     background-color: #fff;
 }
 
+@media (max-width: 767px) and (min-width: 320px) {
+    .footer {
+        flex-wrap: wrap;
+    }
+}
+
 .footer__copyright {
     margin: 0 0 0 104px;
     font-family: Roboto;
@@ -43,10 +48,39 @@ export default {
     color: #b6bcbf;
 }
 
+@media (max-width: 1439px) and (min-width: 768px) {
+    .footer__copyright {
+        margin-left: 40px;
+    }
+}
+
+@media (max-width: 767px) and (min-width: 320px) {
+    .footer__copyright {
+        margin-left: 16px;
+        margin-top: 40px;
+        order: 3;
+    }
+}
+
 .footer__menu {
     width: 406px;
     display: flex;
     justify-content: space-between;
+}
+
+@media (max-width: 1439px) and (min-width: 768px) {
+    .footer__menu {
+        width: 360px;
+    }
+}
+
+@media (max-width: 767px) and (min-width: 320px) {
+    .footer__menu {
+        max-width: 184px;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 16px;
+    }
 }
 
 .footer__link {
@@ -60,11 +94,30 @@ export default {
     color: #1a1b22;
 }
 
+@media (max-width: 767px) and (min-width: 320px) {
+    .footer__link {
+        line-height: 48px;
+    }
+}
+
 .footer__social {
     display: flex;
     justify-content: space-between;
     gap: 24px;
     margin-right: 104px;
+}
+
+@media (max-width: 1439px) and (min-width: 768px) {
+    .footer__social {
+        margin-right: 40px;
+    }
+}
+
+@media (max-width: 767px) and (min-width: 320px) {
+    .footer__social {
+        margin-right: 18px;
+        justify-content: flex-end;
+    }
 }
 
 .footer__social-link {

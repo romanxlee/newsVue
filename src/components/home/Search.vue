@@ -64,6 +64,12 @@ export default {
     padding-bottom: 80px;
 }
 
+@media (max-width: 767px) and (min-width: 320px) {
+    .search {
+        padding-bottom: 32px;
+    }
+}
+
 .search__form {
     max-width: 608px;
     margin: 0 auto;
@@ -80,6 +86,14 @@ export default {
     max-width: 608px;
 }
 
+@media (max-width: 767px) and (min-width: 320px) {
+    .search__title {
+        font-size: 36px;
+        line-height: 40px;
+        margin-left: 19px;
+    }
+}
+
 .search__text {
     font-family: Roboto;
     font-style: normal;
@@ -89,6 +103,15 @@ export default {
     color: #fff;
     max-width: 545px;
     margin: 32px 0 64px;
+}
+
+@media (max-width: 767px) and (min-width: 320px) {
+    .search__text {
+        font-size: 20px;
+        line-height: 26px;
+        margin-left: 16px;
+        max-width: 288px;
+    }
 }
 
 .search__field {
@@ -114,6 +137,12 @@ export default {
     padding: 21px 0 21px 24px;
 }
 
+@media (max-width: 767px) and (min-width: 320px) {
+    .search__input {
+        width: 288px;
+    }
+}
+
 .search__button {
     position: absolute;
     background: #2f71e5;
@@ -131,5 +160,13 @@ export default {
     right: 0;
     width: 168px;
     height: 64px;
+}
+
+@media (max-width: 767px) and (min-width: 320px) {
+    .search__button {
+        position: relative;
+        margin-top: 16px;
+        width: 288px;
+    }
 }
 </style>

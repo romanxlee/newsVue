@@ -1,6 +1,7 @@
 <template>
   <div class="background">
-    <Header />
+    <Header 
+    v-bind:isHome="isHome"/>
     <Search />
   </div>
 </template>
@@ -10,6 +11,11 @@ import Header from '@/components/Header';
 import Search from '@/components/home/Search'
 
 export default {
+  data() {
+    return {
+      isHome: true
+    }
+  },
   components: {
     Header,
     Search

@@ -22,6 +22,7 @@ export default {
 </script>
 
 <style>
+
 .cards__item {
     max-width: 400px;
     display: flex;
@@ -36,9 +37,15 @@ export default {
 .cards__image {
     max-width: 400px;
     height: 272px;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: 50%;
+}
+
+@media (max-width: 1439px) and (min-width: 768px) {
+    .cards__image {
+        height: 150px;
+    }
 }
 
 .cards__date {
@@ -51,6 +58,13 @@ export default {
     margin-left: 24px;
     margin-top: 20px;
     margin-bottom: 12px;
+}
+
+@media (max-width: 1439px) and (min-width: 768px) {
+    .cards__date {
+        margin-top: 16px;
+        margin-left: 16px;
+    }
 }
 
 .cards__title {
@@ -66,6 +80,15 @@ export default {
     margin-bottom: 0;
 }
 
+@media (max-width: 1439px) and (min-width: 768px) {
+    .cards__title {
+        font-size: 22px;
+        line-height: 24px;
+        margin-left: 16px;
+        max-width: 192px;
+    }
+}
+
 .cards__text {
     max-width: 352px;
     font-family: Roboto;
@@ -77,6 +100,15 @@ export default {
     margin-left: 24px;
     margin-top: 16px;
     margin-bottom: 10px;
+}
+
+@media (max-width: 1439px) and (min-width: 768px) {
+    .cards__text {
+        height: 88px;
+        overflow: hidden;
+        margin-top: 10px;
+        margin-left: 16px;
+    }
 }
 
 .cards__source {
@@ -91,5 +123,12 @@ export default {
     color: #b6bcbf;
     margin-left: 24px;
     margin-bottom: 24px;
+}
+
+@media (max-width: 1439px) and (min-width: 768px) {
+    .cards__source {
+        margin-left: 16px;
+        margin-bottom: 16px;
+    }
 }
 </style>
