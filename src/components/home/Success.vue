@@ -30,6 +30,7 @@ export default {
         }
     },
     methods: {
+        
     },
     components: {
         CardsList
@@ -47,6 +48,13 @@ export default {
     display: flex;
     justify-content: space-between;
     margin: 76px 104px 0;
+}
+
+@media (max-width: 767px) and (min-width: 320px) {
+    .results__head {
+        flex-direction: column;
+        margin: 32px 16px 0;
+    }
 }
 
 .section-title {
@@ -80,5 +88,12 @@ export default {
     width: 288px;
     border-style: none;
     margin-bottom: 80px;
+}
+
+@media (max-width: 1439px) and (min-width: 768px) {
+    .results__button {
+        width: 240px;
+        padding: 15px 60px;
+    }
 }
 </style>

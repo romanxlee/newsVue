@@ -3,20 +3,16 @@
         <h2 class="tech__title section-title">Используемые технологии</h2>
         <div class="tech__container">
             <div class="tech__item">
-                <p class="tech__text">HTML</p>
-                <img class="tech__image" src="../../assets/html.svg" alt="HTML logo">
+                <p class="tech__text">Vue</p>
+                <img class="tech__image" src="../../assets/logo.png" alt="Vue logo">
             </div>
             <div class="tech__item">
-                <p class="tech__text">CSS</p>
-                <img class="tech__image" src="../../assets/css.svg" alt="CSS logo">
+                <p class="tech__text">VueX</p>
+                <img class="tech__image" src="../../assets/vuex.png" alt="VueX logo">
             </div>
             <div class="tech__item">
-                <p class="tech__text">Java Script</p>
-                <img class="tech__image" src="../../assets/js.svg" alt="JS logo">
-            </div>
-            <div class="tech__item">
-                <p class="tech__text">Webpack</p>
-                <img class="tech__image" src="../../assets/webpack.svg" alt="Webpack logo">
+                <p class="tech__text">Vue Router</p>
+                <img class="tech__image" src="../../assets/router.png" alt="Router logo">
             </div>
         </div>
     </section>
@@ -48,7 +44,7 @@ export default {
     margin-left: 178px;
     margin-top: 13px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 40px;
 }
 

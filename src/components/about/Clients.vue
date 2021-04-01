@@ -20,4 +20,16 @@ export default {
     padding: 80px 104px 94px;
     background-color: #fff;
 }
+
+@media (max-width: 1439px) and (min-width: 768px) {
+    .clients {
+        padding: 30px 40px 26px;
+    }
+}
+
+@media (max-width: 767px) and (min-width: 320px) {
+    .clients {
+        padding: 16px;
+    }
+}
 </style>

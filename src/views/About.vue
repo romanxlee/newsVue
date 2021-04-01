@@ -1,6 +1,7 @@
 <template>
   <div class="page">
-      <Header />
+      <Header 
+      v-bind:isAbout="isAbout"/>
       <Content>
           <Clients />
           <Techs />
@@ -19,6 +20,11 @@ import Author from '@/components/Author'
 import Footer from '@/components/Footer'
 
 export default {
+    data() {
+        return {
+            isAbout: true
+        }
+    },
     components: {
         Header,
         Content,

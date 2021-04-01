@@ -21,6 +21,20 @@ export default {
 </script>
 
 <style>
+@media (max-width: 1439px) and (min-width: 768px) {
+    .author {
+        padding: 40px 40px 48px;
+    }
+}
+
+@media (max-width: 767px) and (min-width: 320px) {
+    .author {
+        flex-direction: column;
+        padding: 32px 16px;
+        align-items: center;
+    }
+}
+
 .author {
     max-width: 1440px;
     background-color: #fff;
@@ -36,10 +50,36 @@ export default {
     align-self: center;
 }
 
+@media (max-width: 1439px) and (min-width: 768px) {
+    .author__avatar {
+        width: 232px;
+    }
+}
+
+@media (max-width: 767px) and (min-width: 320px) {
+    .author__avatar {
+        width: 272px;
+    }
+}
+
 .author__container {
     max-width: 600px;
     padding-top: 51px;
     margin-right: 216px;
+}
+
+@media (max-width: 1439px) and (min-width: 768px) {
+    .author__container {
+        padding-top: 0;
+        margin-right: 40px;
+    }
+}
+
+@media (max-width: 767px) and (min-width: 320px) {
+    .author__container {
+        margin: 0;
+        padding-top: 16px;
+    }
 }
 
 .section-title {
