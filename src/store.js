@@ -5,13 +5,19 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        cardsToRender: {},
-        showPreloader: false
+        cardsToRender: [],
+        newsCounter: 3
     },
     mutations: {
         cardsToRender: (state, connections) =>
             {state.cardsToRender = connections},
-        showPreloader: (state, connections) =>
-            {state.showPreloader = connections}
+        incrementNewsCounter (state) {
+            state.newsCounter += 3
+        }
+    },
+    getters: {
+        filteredCards: state => {
+            return state.cardsToRender.slice(0, state.newsCounter)
+        }
     }
 })

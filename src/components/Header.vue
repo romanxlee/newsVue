@@ -4,7 +4,7 @@
       class="header">
         <h2 
         v-bind:class="{ 'header__title_black' : isAbout}"
-        class="header__title">NewsAnalyzer</h2>
+        class="header__title">NewsFinder</h2>
         <nav class="header__menu">
             <router-link 
             v-bind:class="{ 'header__link_current' : isHome}"
