@@ -23,19 +23,7 @@ export default {
             request: ''
         }
     },
-/*         mounted() {
-        const articles = JSON.parse(localStorage.articles)
-        if (articles) {
-            this.cards = articles
-            console.log(this.cards)
-        }
-    }, */
     methods: {
-         /* setRequest() {
-             localStorage.setItem('request', JSON.stringify(this.request))
-             console.log(JSON.parse(localStorage.getItem('request')))
-         }, */
-
         onSubmit() {
             const key = '&apiKey=dd4fcad612854992bf99fc67d8617096'
             const TODAY = new Date()
@@ -43,14 +31,11 @@ export default {
             const MS_IN_DAY = 86400000;
             const DAYS_AGO = DAYS_IN_WEEK * MS_IN_DAY;
             const DAYS_FROM_TODAY = TODAY - DAYS_AGO;
-            return fetch('https://nomoreparties.co/news/v2/everything?' + `q=${this.request}` + `&from=${TODAY}` + `&to=${DAYS_FROM_TODAY}` +`&sortBy=publishedAt` + `&language=ru` + `&pageSize=6` + key, {
+            return fetch('https://nomoreparties.co/news/v2/everything?' + `q=${this.request}` + `&from=${TODAY}` + `&to=${DAYS_FROM_TODAY}` +`&sortBy=publishedAt` + `&language=ru` + `&pageSize=100` + key, {
             method: 'GET'
         })
         .then((res) => res.json())
-        .then((res) => this.$store.commit('cardsToRender', res.articles))
-        //.finally(this.$store.commit('showPreloader', false))
-        //.then((res) => localStorage.articles = JSON.stringify(res.articles))
-        
+        .then((res) => this.$store.commit('cardsToRender', res.articles))        
         .catch(err => console.log(err))
         }
     }
@@ -135,6 +120,7 @@ export default {
     line-height: 22px;
     color: #b6bcbf;
     padding: 21px 0 21px 24px;
+    outline: none;
 }
 
 @media (max-width: 767px) and (min-width: 320px) {
@@ -160,6 +146,12 @@ export default {
     right: 0;
     width: 168px;
     height: 64px;
+    outline: none;
+    cursor: pointer;
+}
+
+.search__button:hover {
+    opacity: 0.9;
 }
 
 @media (max-width: 767px) and (min-width: 320px) {

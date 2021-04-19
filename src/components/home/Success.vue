@@ -4,14 +4,15 @@
     class="results__success">
         <div class="results__head">
             <h2 class="section-title">Результаты поиска</h2>
-            <a class="section-link" href="#">Посмотреть аналитику <img class="arrow" src="../../assets/arrow.svg" alt="Посмотреть аналитику"></a>
         </div>
         
         <CardsList 
         v-bind:renderCards="renderCards"
         />
 
-        <button class="results__button">Показать еще</button>
+        <button
+        @click.prevent="loadMore"
+        class="results__button">Показать еще</button>
     </div>
 </template>
 
@@ -21,7 +22,7 @@ import CardsList from '@/components/home/CardsList';
 export default {
     computed: {
         renderCards() {
-            return this.$store.state.cardsToRender
+            return this.$store.getters.filteredCards
         }
     },
     data() {
@@ -30,7 +31,9 @@ export default {
         }
     },
     methods: {
-        
+        loadMore() {
+            this.$store.commit('incrementNewsCounter')
+        }
     },
     components: {
         CardsList
@@ -88,6 +91,13 @@ export default {
     width: 288px;
     border-style: none;
     margin-bottom: 80px;
+    outline: none;
+    cursor: pointer;
+    transition: box-shadow .3s;
+}
+
+.results__button:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
 }
 
 @media (max-width: 1439px) and (min-width: 768px) {

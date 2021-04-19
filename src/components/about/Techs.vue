@@ -64,5 +64,29 @@ export default {
     color: #1a1b22;
 }
 
+@media (max-width: 1439px) and (min-width: 768px) {
+    .tech {
+        padding: 40px;
+    }
+}
 
+@media (max-width: 767px) and (min-width: 320px) {
+    .tech {
+        padding: 32px 16px;
+    }
+}
+
+@media (max-width: 1439px) and (min-width: 768px) {
+    .tech__container {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 767px) and (min-width: 320px) {
+    .tech__container {
+        grid-template-columns: 1fr;
+        margin-left: 0;
+        grid-gap: 33px;
+    }
+}
 </style>
