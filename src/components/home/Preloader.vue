@@ -1,6 +1,5 @@
 <template>
-    <div 
-    v-if="this.$store.state.showPreloader"
+    <div
     class="results__preloader">
         <i class="circle-preloader"></i>
         <p class="results__text">Идет поиск новостей...</p>

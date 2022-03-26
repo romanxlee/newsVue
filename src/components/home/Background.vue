@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import Header from '@/components/Header';
-import Search from '@/components/home/Search'
+import Header from '@/components/Header.vue';
+import Search from '@/components/home/Search.vue'
 
 export default {
   data() {

@@ -10,11 +10,11 @@
 </template>
 
 <script>
-import Background from '@/components/home/Background';
-import Content from '@/components/Content'
-import Footer from '@/components/Footer'
-import Author from '@/components/Author'
-import Results from '@/components/home/Results'
+import Background from '@/components/home/Background.vue';
+import Content from '@/components/Content.vue'
+import Footer from '@/components/Footer.vue'
+import Author from '@/components/Author.vue'
+import Results from '@/components/home/Results.vue'
 
 export default {
     components: {

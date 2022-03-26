@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import Preloader from '@/components/home/Preloader';
-import Nothing from '@/components/home/Nothing';
-import Success from '@/components/home/Success'
+import Preloader from '@/components/home/Preloader.vue';
+import Nothing from '@/components/home/Nothing.vue';
+import Success from '@/components/home/Success.vue'
 
 export default {
     components: {

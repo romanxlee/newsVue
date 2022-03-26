@@ -1,12 +1,11 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import { defineStore } from 'pinia'
 
-Vue.use(Vuex)
-
-export default new Vuex.Store({
-    state: {
+export const useStore = defineStore('main', {
+    state() {
+        return {
         cardsToRender: [],
         newsCounter: 3
+        }
     },
     mutations: {
         cardsToRender: (state, connections) =>

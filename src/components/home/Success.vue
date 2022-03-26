@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import CardsList from '@/components/home/CardsList';
+import CardsList from '@/components/home/CardsList.vue';
 
 export default {
     computed: {
