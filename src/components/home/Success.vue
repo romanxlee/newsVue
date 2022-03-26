@@ -16,28 +16,16 @@
     </div>
 </template>
 
-<script>
+<script setup>
+import {computed, ref} from 'vue'
 import CardsList from '@/components/home/CardsList.vue';
+import { useStore } from "../../store";
+const store = useStore()
 
-export default {
-    computed: {
-        renderCards() {
-            return this.$store.getters.filteredCards
-        }
-    },
-    data() {
-        return {
-            
-        }
-    },
-    methods: {
-        loadMore() {
-            this.$store.commit('incrementNewsCounter')
-        }
-    },
-    components: {
-        CardsList
-    }
+const renderCards = computed(() => store.getters.filteredCards)
+
+const loadMore = () => {
+  store.commit('incrementNewsCounter')
 }
 </script>
 

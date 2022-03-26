@@ -8,20 +8,10 @@
     </section>
 </template>
 
-<script>
+<script setup>
 import Preloader from '@/components/home/Preloader.vue';
 import Nothing from '@/components/home/Nothing.vue';
 import Success from '@/components/home/Success.vue'
-
-export default {
-    components: {
-        Preloader,
-        Nothing,
-        Success
-    },
-    methods: {
-    }
-}
 </script>
 
 <style>

@@ -15,30 +15,26 @@
       </section>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue'
+import { useStore } from "../../store";
+const store = useStore()
 
-export default {
-    data() {
-        return {
-            request: ''
-        }
-    },
-    methods: {
-        onSubmit() {
-            const key = '&apiKey=dd4fcad612854992bf99fc67d8617096'
-            const TODAY = new Date()
-            const DAYS_IN_WEEK = 7;
-            const MS_IN_DAY = 86400000;
-            const DAYS_AGO = DAYS_IN_WEEK * MS_IN_DAY;
-            const DAYS_FROM_TODAY = TODAY - DAYS_AGO;
-            return fetch('https://nomoreparties.co/news/v2/everything?' + `q=${this.request}` + `&from=${TODAY}` + `&to=${DAYS_FROM_TODAY}` +`&sortBy=publishedAt` + `&language=ru` + `&pageSize=100` + key, {
-            method: 'GET'
-        })
-        .then((res) => res.json())
-        .then((res) => this.$store.commit('cardsToRender', res.articles))        
-        .catch(err => console.log(err))
-        }
-    }
+const request = ref('')
+
+const onSubmit = () => {
+  const key = '&apiKey=dd4fcad612854992bf99fc67d8617096'
+  const TODAY = new Date()
+  const DAYS_IN_WEEK = 7;
+  const MS_IN_DAY = 86400000;
+  const DAYS_AGO = DAYS_IN_WEEK * MS_IN_DAY;
+  const DAYS_FROM_TODAY = TODAY - DAYS_AGO;
+  return fetch('https://nomoreparties.co/news/v2/everything?' + `q=${request}` + `&from=${TODAY}` + `&to=${DAYS_FROM_TODAY}` +`&sortBy=publishedAt` + `&language=ru` + `&pageSize=100` + key, {
+    method: 'GET'
+  })
+      .then((res) => res.json())
+      .then((res) => store.commit('cardsToRender', res.articles))
+      .catch(err => console.log(err))
 }
 </script>
 

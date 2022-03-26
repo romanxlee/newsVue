@@ -16,17 +16,15 @@
       </header>
 </template>
 
-<script>
-export default {
-    props: {
-        isHome: {
-            type: Boolean
-        },
-        isAbout: {
-            type: Boolean
-        }
-    }
-}
+<script setup>
+const props = defineProps({
+  isHome: {
+    type: Boolean
+  },
+  isAbout: {
+    type: Boolean
+  }
+})
 </script>
 
 <style>

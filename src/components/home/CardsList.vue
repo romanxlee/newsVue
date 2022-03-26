@@ -9,19 +9,14 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import Card from '@/components/home/Card.vue';
 
-export default {
-    props: {
-        renderCards: {
-            type: Array
-        }
-    },
-    components: {
-        Card
-    }
-}
+const props = defineProps({
+  renderCards: {
+    type: Array
+  }
+})
 </script>
 
 <style>
