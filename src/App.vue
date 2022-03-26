@@ -47,7 +47,7 @@ export default {
   font-family: 'Roboto Slab';
   font-style:  normal;
   font-weight: 400;
-  src: url("./fonts/robotoslab-regular.woff") format("woff");
+  src: url('./fonts/RobotoSlab-Regular.ttf') format('truetype');
 }
 
 
@@ -55,20 +55,20 @@ export default {
   font-family: 'Roboto';
   font-style:  normal;
   font-weight: 400;
-  src: url("./fonts/roboto-regular.woff") format("woff");
+  src: url('./fonts/Roboto-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Roboto';
   font-style:  normal;
   font-weight: 500;
-  src: url("./fonts/roboto-medium.woff") format("woff");
+  src: url('./fonts/Roboto-Medium.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Source Sans Pro';
   font-style:  normal;
   font-weight: 400;
-  src: url("./fonts/sourcesanspro-regular.woff") format("woff");
+  src: url('./fonts/SourceSansPro-Regular.ttf') format('truetype');
 }
 </style>

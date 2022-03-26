@@ -1,7 +1,7 @@
 <template>
     <div class="page">
         <Background />
-        <Content >
+        <Content>
             <Results />
             <Author />
         </Content>
