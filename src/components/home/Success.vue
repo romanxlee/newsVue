@@ -1,13 +1,13 @@
 <template>
     <div 
-    v-if="renderCards.length"
+    v-if="store.filteredCards.length"
     class="results__success">
         <div class="results__head">
             <h2 class="section-title">Результаты поиска</h2>
         </div>
         
         <CardsList 
-        v-bind:renderCards="renderCards"
+        v-bind:renderCards="store.filteredCards"
         />
 
         <button
@@ -22,7 +22,7 @@ import CardsList from '@/components/home/CardsList.vue';
 import { useStore } from "../../store";
 const store = useStore()
 
-const renderCards = computed(() => store.getters.filteredCards)
+// const renderCards = computed(() => store.getters.filteredCards)
 
 const loadMore = () => {
   store.commit('incrementNewsCounter')

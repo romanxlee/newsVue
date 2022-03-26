@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 
 export const useStore = defineStore('main', {
-    state() {
+    state: () => {
         return {
         cardsToRender: [],
         newsCounter: 3
@@ -15,8 +15,6 @@ export const useStore = defineStore('main', {
         }
     },
     getters: {
-        filteredCards: state => {
-            return state.cardsToRender.slice(0, state.newsCounter)
-        }
+        filteredCards: (state) => state.cardsToRender.slice(0, state.newsCounter)
     }
 })
