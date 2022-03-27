@@ -26,7 +26,7 @@ const setCards = (news) => {
   store.setCards(news)
 }
 
-const onSubmit = () => {
+const searchNews = () => {
   store.toggleSearch()
   const key = '&apiKey=dd4fcad612854992bf99fc67d8617096'
   const TODAY = new Date()
@@ -39,8 +39,13 @@ const onSubmit = () => {
   })
       .then((res) => res.json())
       .then((res) => setCards(res.articles))
-      .then(store.toggleSearch())
+      //.finally(store.toggleSearch())
       .catch(err => console.log(err))
+}
+
+const onSubmit = async () => {
+  await searchNews()
+  store.toggleSearch()
 }
 </script>
 

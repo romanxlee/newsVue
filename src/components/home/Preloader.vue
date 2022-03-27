@@ -1,15 +1,11 @@
 <template>
-    <div
-        v-if="store.isSearching"
-    class="results__preloader">
+    <div class="results__preloader">
         <i class="circle-preloader"></i>
         <p class="results__text">Идет поиск новостей...</p>
     </div>
 </template>
 
 <script setup>
-import { useStore } from "../../store";
-const store = useStore()
 </script>
 
 <style>
@@ -29,5 +25,11 @@ const store = useStore()
     border-radius: 50%;
     margin-bottom: 24px;
     animation: spin .75s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>

@@ -1,7 +1,5 @@
 <template>
-    <div 
-    v-if="store.filteredCards.length"
-    class="results__success">
+    <div class="results__success">
         <div class="results__head">
             <h2 class="section-title">Результаты поиска</h2>
         </div>

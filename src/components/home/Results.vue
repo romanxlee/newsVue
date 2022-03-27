@@ -1,10 +1,9 @@
 <template>
     <section 
     class="results">
-        <Preloader />
+        <Preloader v-if="store.isSearching" />
         <Nothing v-if="store.cardsToRender.length === 0 && store.haveResults" />
-        <Success 
-        />
+        <Success v-if="store.filteredCards.length" />
     </section>
 </template>
 
