@@ -7,17 +7,14 @@
 
             <div class="author__container">
                   <h2 class="section-title">Об авторе</h2>
-                  <p class="section-text">Привет! Меня зовут Роман, я начинающий frontend-разработчик.</p>
+                  <p class="section-text">Привет! Меня зовут Роман, я frontend-разработчик.</p>
                   <p class="section-text">Имею навыки адаптивной и семантической верстки по макетам из Figma, работы с Git и Webpack, программирования на "чистом" JavaScript и с помощью фреймворка Vue и его экосистемы</p>
-                  <p class="section-text">Данный проект является дипломной работой в курсе Яндекс.Практикума по профессии "Frontend-разработчик", переписанный мной на Vue. В нем реализованы асинхронные запросы к API, адаптивная верстка, используется vue-router и Vuex.</p>
+                  <p class="section-text">Данный проект является демонстрацией моих навыков. В нем реализованы сборка с помощью Vite, асинхронные запросы к API, адаптивная верстка, используется Vue 3 Composition API и Pinia.</p>
             </div>
       </section>
 </template>
 
-<script>
-export default {
-
-}
+<script setup>
 </script>
 
 <style>

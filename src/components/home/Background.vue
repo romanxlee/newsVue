@@ -6,21 +6,12 @@
   </div>
 </template>
 
-<script>
-import Header from '@/components/Header';
-import Search from '@/components/home/Search'
+<script setup>
+import { ref } from 'vue'
+import Header from '@/components/Header.vue';
+import Search from '@/components/home/Search.vue'
 
-export default {
-  data() {
-    return {
-      isHome: true
-    }
-  },
-  components: {
-    Header,
-    Search
-  }
-}
+const isHome = ref(true)
 </script>
 
 <style>

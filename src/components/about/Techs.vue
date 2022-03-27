@@ -2,26 +2,35 @@
     <section class="tech">
         <h2 class="tech__title section-title">Используемые технологии</h2>
         <div class="tech__container">
-            <div class="tech__item">
-                <p class="tech__text">Vue</p>
-                <img class="tech__image" src="../../assets/logo.png" alt="Vue logo">
-            </div>
-            <div class="tech__item">
-                <p class="tech__text">VueX</p>
-                <img class="tech__image" src="../../assets/vuex.png" alt="VueX logo">
-            </div>
-            <div class="tech__item">
-                <p class="tech__text">Vue Router</p>
-                <img class="tech__image" src="../../assets/router.png" alt="Router logo">
+            <div v-for="item in LOGOS" :key="item.name" class="tech__item">
+                <p class="tech__text">{{ item.name}}</p>
+                <img class="tech__image" :src=item.logo :alt=item.alt>
             </div>
         </div>
     </section>
 </template>
 
-<script>
-export default {
-
-}
+<script setup>
+import vueLogo from '../../assets/logo.png'
+import viteLogo from '../../assets/vite.svg'
+import piniaLogo from '../../assets/pinia.svg'
+const LOGOS = [
+  {
+    name: 'Vue',
+    logo: vueLogo,
+    alt: 'Vue logo'
+  },
+  {
+    name: 'Vite',
+    logo: viteLogo,
+    alt: 'Vite logo'
+  },
+  {
+    name: 'Pinia',
+    logo: piniaLogo,
+    alt: 'Pinia logo'
+  }
+]
 </script>
 
 <style>
@@ -64,6 +73,11 @@ export default {
     color: #1a1b22;
 }
 
+.tech__image {
+  width: 200px;
+  height: 200px;
+}
+
 @media (max-width: 1439px) and (min-width: 768px) {
     .tech {
         padding: 40px;
@@ -72,7 +86,8 @@ export default {
 
 @media (max-width: 767px) and (min-width: 320px) {
     .tech {
-        padding: 32px 16px;
+      padding: 32px 16px;
+      justify-content: center;
     }
 }
 
