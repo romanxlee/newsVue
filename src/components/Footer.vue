@@ -1,6 +1,6 @@
 <template>
     <footer class="footer">
-      <p class="footer__copyright">© 2020 romanxlee</p>
+      <p class="footer__copyright">© 2022 romanxlee</p>
       <nav class="footer__menu">
         <router-link class="footer__link" to="/">Главная</router-link>
         <router-link class="footer__link" to="/about">О проекте</router-link>
@@ -8,9 +8,6 @@
     <div class="footer__social">
         <a class="footer__social-link" href="https://github.com/romanxlee" target="blank">
             <img class="footer__social-logo" src="../assets/github.svg" alt="Github">
-        </a>
-        <a class="footer__social-link" href="https://www.facebook.com/" target="blank">
-            <img class="footer__social-logo" src="../assets/fb.svg" alt="Facebook">
         </a>
       </div>
     </footer>
