@@ -1,6 +1,5 @@
 <template>
-    <div 
-    v-if="renderCards.length === 0"
+    <div
     class="results__nothing">
         <img class="results__image" src="../../assets/nothing.svg" alt="Ничего не найдено">
         <h3 class="results__title">Ничего не найдено</h3>
@@ -9,15 +8,11 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
-import { useStore } from "../../store";
-const store = useStore()
-const renderCards = computed(() => store.cardsToRender)
 </script>
 
 <style>
 .results__nothing {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
