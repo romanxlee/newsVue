@@ -16,17 +16,15 @@
       </header>
 </template>
 
-<script>
-export default {
-    props: {
-        isHome: {
-            type: Boolean
-        },
-        isAbout: {
-            type: Boolean
-        }
-    }
-}
+<script setup>
+const props = defineProps({
+  isHome: {
+    type: Boolean
+  },
+  isAbout: {
+    type: Boolean
+  }
+})
 </script>
 
 <style>
@@ -92,13 +90,6 @@ export default {
     color: #b6bcbf;
 }
 
-@media (max-width: 767px) and (min-width: 320px) {
-    .header__link {
-        font-size: 16px;
-        line-height: 24px;
-    }
-}
-
 .header__link.header__link_current {
     color: #fff;
     border-bottom: 3px solid #fff;
@@ -108,5 +99,15 @@ export default {
 .header__link.header__link_black {
     color: #000;
     border-color: #000;
+}
+
+@media (max-width: 767px) and (min-width: 320px) {
+  .header__link {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .header__link.header__link_current {
+    margin-bottom: -17px;
+  }
 }
 </style>

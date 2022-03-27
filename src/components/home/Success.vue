@@ -1,13 +1,11 @@
 <template>
-    <div 
-    v-if="renderCards.length"
-    class="results__success">
+    <div class="results__success">
         <div class="results__head">
             <h2 class="section-title">Результаты поиска</h2>
         </div>
         
         <CardsList 
-        v-bind:renderCards="renderCards"
+        v-bind:renderCards="store.filteredCards"
         />
 
         <button
@@ -16,28 +14,16 @@
     </div>
 </template>
 
-<script>
-import CardsList from '@/components/home/CardsList';
+<script setup>
+import {computed, ref} from 'vue'
+import CardsList from '@/components/home/CardsList.vue';
+import { useStore } from "../../store";
+const store = useStore()
 
-export default {
-    computed: {
-        renderCards() {
-            return this.$store.getters.filteredCards
-        }
-    },
-    data() {
-        return {
-            
-        }
-    },
-    methods: {
-        loadMore() {
-            this.$store.commit('incrementNewsCounter')
-        }
-    },
-    components: {
-        CardsList
-    }
+// const renderCards = computed(() => store.getters.filteredCards)
+
+const loadMore = () => {
+  store.incrementNewsCounter()
 }
 </script>
 

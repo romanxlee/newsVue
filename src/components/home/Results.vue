@@ -1,27 +1,18 @@
 <template>
     <section 
     class="results">
-        <Preloader />
-        <Nothing />
-        <Success 
-        />
+        <Preloader v-if="store.isSearching" />
+        <Nothing v-if="store.cardsToRender.length === 0 && store.haveResults" />
+        <Success v-if="store.filteredCards.length" />
     </section>
 </template>
 
-<script>
-import Preloader from '@/components/home/Preloader';
-import Nothing from '@/components/home/Nothing';
-import Success from '@/components/home/Success'
-
-export default {
-    components: {
-        Preloader,
-        Nothing,
-        Success
-    },
-    methods: {
-    }
-}
+<script setup>
+import Preloader from '@/components/home/Preloader.vue';
+import Nothing from '@/components/home/Nothing.vue';
+import Success from '@/components/home/Success.vue'
+import { useStore } from '../../store';
+const store = useStore()
 </script>
 
 <style>

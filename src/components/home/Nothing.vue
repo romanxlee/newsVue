@@ -1,6 +1,5 @@
 <template>
-    <div 
-    
+    <div
     class="results__nothing">
         <img class="results__image" src="../../assets/nothing.svg" alt="Ничего не найдено">
         <h3 class="results__title">Ничего не найдено</h3>
@@ -8,19 +7,12 @@
     </div>
 </template>
 
-<script>
-export default {
-data() {
-    return {
-        renderCards: this.$store.state.cardsToRender
-    }
-}
-}
+<script setup>
 </script>
 
 <style>
 .results__nothing {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
 }

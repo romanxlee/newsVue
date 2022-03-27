@@ -1,15 +1,11 @@
 <template>
-    <div 
-    v-if="this.$store.state.showPreloader"
-    class="results__preloader">
+    <div class="results__preloader">
         <i class="circle-preloader"></i>
         <p class="results__text">Идет поиск новостей...</p>
     </div>
 </template>
 
-<script>
-export default {
-}
+<script setup>
 </script>
 
 <style>
@@ -29,5 +25,11 @@ export default {
     border-radius: 50%;
     margin-bottom: 24px;
     animation: spin .75s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>
