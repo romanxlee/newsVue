@@ -25,7 +25,7 @@ const store = useStore()
 // const renderCards = computed(() => store.getters.filteredCards)
 
 const loadMore = () => {
-  store.commit('incrementNewsCounter')
+  store.incrementNewsCounter()
 }
 </script>
 
