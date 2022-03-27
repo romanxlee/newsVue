@@ -1,5 +1,6 @@
 <template>
     <div
+        v-if="store.isSearching"
     class="results__preloader">
         <i class="circle-preloader"></i>
         <p class="results__text">Идет поиск новостей...</p>
@@ -7,6 +8,8 @@
 </template>
 
 <script setup>
+import { useStore } from "../../store";
+const store = useStore()
 </script>
 
 <style>

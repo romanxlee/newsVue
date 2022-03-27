@@ -27,7 +27,7 @@ const setCards = (news) => {
 }
 
 const onSubmit = () => {
-  console.log(request.value)
+  store.toggleSearch()
   const key = '&apiKey=dd4fcad612854992bf99fc67d8617096'
   const TODAY = new Date()
   const DAYS_IN_WEEK = 7;
@@ -39,6 +39,7 @@ const onSubmit = () => {
   })
       .then((res) => res.json())
       .then((res) => setCards(res.articles))
+      .then(store.toggleSearch())
       .catch(err => console.log(err))
 }
 </script>

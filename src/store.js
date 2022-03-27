@@ -4,7 +4,8 @@ export const useStore = defineStore('main', {
     state: () => {
         return {
             cardsToRender: [],
-            newsCounter: 3
+            newsCounter: 3,
+            isSearching: false
         }
     },
     getters: {
@@ -16,6 +17,9 @@ export const useStore = defineStore('main', {
         },
         setCards (news) {
             this.cardsToRender = news
+        },
+        toggleSearch () {
+            this.isSearching = !this.isSearching
         }
     }
 })
